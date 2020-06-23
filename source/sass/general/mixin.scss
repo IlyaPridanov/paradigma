@@ -1,0 +1,34 @@
+@mixin list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin hover {
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
+    text-decoration: underline;
+    opacity: 0.8;
+  }
+}
+
+
+@mixin menu() {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transition: all 0.2s ease-in;
+  transform-origin: 0 0;
+
+  opacity: 1;
+
+  &--inactive {
+      transform-origin: 0 0;
+      transform: scaleY(0);
+      opacity: 0;
+      transition: all 0.2s ease-in;
+  }
+}
