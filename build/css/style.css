@@ -379,8 +379,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
-  background-image: url("../img/background.png"), url("../img/heart.png"), url("../img/heart-2.png");
-  background-attachment: scroll, fixed, fixed;
+  background-image: url("../img/background.png");
   background-repeat: no-repeat; }
 
 *,
@@ -457,92 +456,6 @@ img {
   padding: 0 20px;
   width: 1600px; }
 
-.header {
-  position: relative;
-  padding: 48px 0 0; }
-
-.header__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
-
-.header__logo:hover, .header__logo:focus, .header__logo:active {
-  cursor: pointer;
-  text-decoration: underline;
-  opacity: 0.8; }
-
-.header__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-
-.header__item {
-  margin-right: auto; }
-  .header__item:first-child .header__link {
-    padding-left: 0; }
-
-.header__link {
-  display: block;
-  padding: 15px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #ff6078; }
-  .header__link:hover, .header__link:focus, .header__link:active {
-    cursor: pointer;
-    text-decoration: underline;
-    opacity: 0.8; }
-
-.header__button {
-  margin-top: 8px;
-  margin-right: 4px;
-  display: block;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  outline: none; }
-
-.header__nav {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
-  opacity: 1;
-  background-color: #ffffff; }
-  .header__nav--inactive {
-    -webkit-transform-origin: 0 0;
-            transform-origin: 0 0;
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
-    opacity: 0;
-    -webkit-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in; }
-
-@media (max-width: 1280px) {
-  .header__item:first-child .header__link {
-    padding-left: 15px; } }
-
-@media (max-width: 767px) {
-  .header__list {
-    display: block; }
-  .header__item {
-    text-align: center; }
-  .header__link {
-    padding-bottom: 0; }
-  .header__nav {
-    padding-bottom: 15px; } }
-
 .header-top__row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -583,6 +496,12 @@ img {
           text-decoration: dashed; }
 
 .header-top__phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: "MuseoSansCyrl", "Arial", sans-serif;
   font-size: 24px;
   line-height: 1.5;
@@ -645,3 +564,77 @@ img {
   border-radius: 25px;
   -webkit-box-shadow: 0px 3px 1px 0px #ebeaea;
           box-shadow: 0px 3px 1px 0px #ebeaea; }
+
+.header-top__column-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.nav {
+  background-color: #ffffff; }
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.nav__item {
+  margin-right: auto; }
+  .nav__item:last-child {
+    margin-right: 0; }
+
+.nav__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 60px;
+  font-family: "MuseoSansCyrl", "Arial", sans-serif;
+  line-height: 1;
+  font-size: 15px;
+  font-weight: 300;
+  color: #000000;
+  text-decoration: none; }
+  .nav__link:hover, .nav__link:focus, .nav__link:active {
+    cursor: pointer;
+    text-decoration: underline;
+    opacity: 0.8; }
+  .nav__link--active {
+    font-weight: 700; }
+
+.main {
+  background-image: url("../img/heart.png"), url("../img/heart-2.png");
+  background-attachment: fixed, fixed;
+  background-position: 0 0 , right 0;
+  background-repeat: no-repeat; }
+
+.main__caption {
+  margin: 0;
+  margin-bottom: 60px;
+  max-width: 40%;
+  font-family: "MuseoSansCyrl", "Arial", sans-serif;
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 300;
+  color: #000000; }
+
+.main__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 50px; }
+
+.main__link {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase; }

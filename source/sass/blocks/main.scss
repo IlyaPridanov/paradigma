@@ -1,0 +1,32 @@
+.main {
+  background-image:
+    url('../img/heart.png'),
+    url('../img/heart-2.png');
+  background-attachment: fixed, fixed;
+  background-position: 0 0 , right 0;
+  background-repeat: no-repeat;
+}
+
+.main__caption {
+  margin: 0;
+  margin-bottom: 60px;
+  max-width: 40%;
+
+  font-family: $museo;
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 300;
+  color: $black;
+}
+
+.main__list {
+  @include list();
+
+  margin-bottom: 50px;
+}
+
+.main__link {
+  color: $white;
+  text-decoration: none;
+  text-transform: uppercase;
+}

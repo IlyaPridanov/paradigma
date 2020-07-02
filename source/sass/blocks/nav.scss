@@ -1,0 +1,35 @@
+.nav {
+  background-color: $white;
+}
+
+.nav__list {
+  @include list();
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav__item {
+  margin-right: auto;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.nav__link {
+  @include hover();
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+
+  font-family: $museo;
+  line-height: 1;
+  font-size: 15px;
+  font-weight: 300;
+  color: $black;
+  text-decoration: none;
+
+  &--active {
+    font-weight: 700;
+  }
+}

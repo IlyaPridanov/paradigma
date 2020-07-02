@@ -17,11 +17,7 @@ body {
   flex-direction: column;
   height: 100%;
 
-  background-image:
-    url('../img/background.png'),
-    url('../img/heart.png'),
-    url('../img/heart-2.png');
-  background-attachment: scroll, fixed, fixed;
+  background-image: url('../img/background.png');
   background-repeat: no-repeat;
 }
 

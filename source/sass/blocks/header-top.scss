@@ -38,6 +38,9 @@
 }
 
 .header-top__phone {
+  display: flex;
+  align-items: center;
+
   font-family: $museo;
   font-size: 24px;
   line-height: 1.5;
@@ -98,4 +101,10 @@
   border-radius: 25px;
 
   box-shadow: 0px 3px 1px 0px $secondary-color;
+}
+
+
+.header-top__column-row {
+  display: flex;
+  align-items: center;
 }
