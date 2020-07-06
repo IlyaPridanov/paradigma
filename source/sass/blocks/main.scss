@@ -1,12 +1,3 @@
-.main {
-  background-image:
-    url('../img/heart.png'),
-    url('../img/heart-2.png');
-  background-attachment: fixed, fixed;
-  background-position: 0 0 , right 0;
-  background-repeat: no-repeat;
-}
-
 .main__caption {
   margin: 0;
   margin-bottom: 60px;
@@ -19,6 +10,14 @@
   color: $black;
 }
 
+.main__row {
+  display: flex;
+}
+
+.main__column {
+  position: relative;
+}
+
 .main__list {
   @include list();
 
@@ -26,7 +25,100 @@
 }
 
 .main__link {
+  padding: 0 42px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 90px;
+  width: 370px;
+
   color: $white;
   text-decoration: none;
   text-transform: uppercase;
+
+  border-radius: 30px;
+  background-image: linear-gradient(to bottom ,$primary-color-4 , $primary-color-5);
+  box-shadow: 
+    inset 0px -5px 0px 0px $primary-color-6,
+    0px 5px 0px 0px $primary-color-7;
+
+  & img {
+    position: absolute;
+    right: -50%;
+    top: 50%;
+    transform: translateY(-50% );
+  }
+
+  &:focus,
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.main__details {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__summary {
+  z-index: 5;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+
+  font-family: $appetite;
+  font-size: 20px;
+  color: $white;
+
+  background-color: $primary-color-3;
+  border-radius: 50%;
+  box-shadow: 2px 2px 0px 0px $primary-color-2;
+  outline: none;
+  animation: radial-pulse 3s infinite;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &:focus,
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
+
+.main__details-text {
+  padding: 28px;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 50%;
+  
+  margin: 0;
+  min-width: 130px;
+  max-width: 100%;
+
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.5;
+
+  background-color: $white;
+  box-shadow: 12px -12px 10px 0px $white-a50;
+  border-radius: 50% 50% 15px 15px / 15px 15px 15px 15px; 
 }
