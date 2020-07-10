@@ -17,13 +17,14 @@ body {
   flex-direction: column;
   height: 100%;
 
-  background-image: 
+  background-image:
     url('../img/heart.png'),
     url('../img/heart-2.png'),
     url('../img/background.png');
   background-attachment: fixed, fixed, scroll;
   background-position: 0 0 , right 0, center;
   background-repeat: no-repeat;
+  background-size: auto, auto, 100vw 300%;
 }
 
 *,

@@ -18,6 +18,7 @@
 
 .nav__link {
   @include hover();
+  padding: 0 1vw;
   display: flex;
   align-items: center;
   min-height: 60px;

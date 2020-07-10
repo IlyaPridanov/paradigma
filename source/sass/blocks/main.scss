@@ -1,5 +1,23 @@
+.main {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 40px;
+
+  background-image:
+    url('../img/wave.png'),
+    url('../img/girl.png');
+  background-repeat: no-repeat;
+  background-position:
+    bottom center,
+    bottom right;
+  background-size:
+    contain,
+    auto auto;
+}
+
 .main__caption {
   margin: 0;
+  margin-left: 6vw;
   margin-bottom: 60px;
   max-width: 40%;
 
@@ -16,6 +34,12 @@
 
 .main__column {
   position: relative;
+  flex: 1 0 50%;
+
+  &--card {
+    background-image: url('../img/card.png');
+    background-repeat: no-repeat;
+  }
 }
 
 .main__list {
@@ -34,12 +58,13 @@
   width: 370px;
 
   color: $white;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 
   border-radius: 30px;
   background-image: linear-gradient(to bottom ,$primary-color-4 , $primary-color-5);
-  box-shadow: 
+  box-shadow:
     inset 0px -5px 0px 0px $primary-color-6,
     0px 5px 0px 0px $primary-color-7;
 
@@ -59,10 +84,7 @@
 }
 
 .main__details {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,7 +130,7 @@
   z-index: 1;
   left: 50%;
   bottom: 50%;
-  
+
   margin: 0;
   min-width: 130px;
   max-width: 100%;
@@ -120,5 +142,18 @@
 
   background-color: $white;
   box-shadow: 12px -12px 10px 0px $white-a50;
-  border-radius: 50% 50% 15px 15px / 15px 15px 15px 15px; 
+  border-radius: 50% 50% 15px 15px / 15px 15px 15px 15px;
+}
+
+.main__bottom-link {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &:focus,
+  &:hover,
+  &:active {
+    cursor: pointer;
+  }
 }

@@ -382,7 +382,8 @@ body {
   background-image: url("../img/heart.png"), url("../img/heart-2.png"), url("../img/background.png");
   background-attachment: fixed, fixed, scroll;
   background-position: 0 0 , right 0, center;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-size: auto, auto, 100vw 300%; }
 
 *,
 *::before,
@@ -481,23 +482,38 @@ img {
   width: 1600px; }
 
 .header-top__row {
+  padding-top: 31px;
+  padding-bottom: 7px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
-.header-top__logo:hover, .header-top__logo:focus, .header-top__logo:active {
-  cursor: pointer;
-  text-decoration: underline;
-  opacity: 0.8; }
+.header-top__column--map {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.header-top__logo {
+  margin-left: 15px; }
+  .header-top__logo:hover, .header-top__logo:focus, .header-top__logo:active {
+    cursor: pointer;
+    text-decoration: underline;
+    opacity: 0.8; }
 
 .header-top__text {
   max-width: 170px;
   margin: 0;
   font-family: "MuseoSansCyrl", "Arial", sans-serif;
   font-weight: 300;
-  line-height: 1;
+  line-height: 1.4;
   font-size: 14px;
   color: #000000; }
 
@@ -508,8 +524,11 @@ img {
   line-height: 1;
   font-size: 16px;
   color: #000000; }
+  .header-top__adress b {
+    display: block; }
 
 .header-top__map-link {
+  display: block;
   font-family: "MuseoSansCyrl", "Arial", sans-serif;
   font-weight: 300;
   line-height: 1;
@@ -616,6 +635,7 @@ img {
     margin-right: 0; }
 
 .nav__link {
+  padding: 0 1vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -636,8 +656,18 @@ img {
   .nav__link--active {
     font-weight: 700; }
 
+.main {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  background-image: url("../img/wave.png"), url("../img/girl.png");
+  background-repeat: no-repeat;
+  background-position: bottom center, bottom right;
+  background-size: contain, auto auto; }
+
 .main__caption {
   margin: 0;
+  margin-left: 6vw;
   margin-bottom: 60px;
   max-width: 40%;
   font-family: "MuseoSansCyrl", "Arial", sans-serif;
@@ -652,7 +682,13 @@ img {
   display: flex; }
 
 .main__column {
-  position: relative; }
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%; }
+  .main__column--card {
+    background-image: url("../img/card.png");
+    background-repeat: no-repeat; }
 
 .main__list {
   list-style: none;
@@ -675,6 +711,7 @@ img {
   height: 90px;
   width: 370px;
   color: #ffffff;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 30px;
@@ -693,9 +730,7 @@ img {
     text-decoration: underline; }
 
 .main__details {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -754,3 +789,12 @@ img {
   -webkit-box-shadow: 12px -12px 10px 0px rgba(255, 255, 255, 0.5);
           box-shadow: 12px -12px 10px 0px rgba(255, 255, 255, 0.5);
   border-radius: 50% 50% 15px 15px / 15px 15px 15px 15px; }
+
+.main__bottom-link {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%); }
+  .main__bottom-link:focus, .main__bottom-link:hover, .main__bottom-link:active {
+    cursor: pointer; }
