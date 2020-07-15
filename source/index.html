@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="format-detection" content="telephone=no">
   <meta name="description" content="Put your description here.">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 </head>
@@ -22,50 +23,59 @@
             <img src="img/logo.png" alt="logo">
           </a>
         </div>
-        <div class="header-top__column">
+        <div class="header-top__column header-top__column--text">
           <p class="header-top__text">
             Студия депиляции и массажный кабинет в Бресте
           </p>
         </div>
         <div class="header-top__column header-top__column--map">
-          <img src="img/map.png" alt="map-min">
-          <div class="">
+          <img class="header-top__map-img js-btn" src="img/map.png" alt="map-min" data-mobile="map">
+          <div class="header-top__map-column js-mobile js-close" data-mobile="map">
             <p class="header-top__adress">
               <b>Мы находимся в центре:</b>
                г. Брест, ул. Гоголя, д.65
             </p>
-            <a href="#" class="header-top__map-link">Смотреть на карте</a>
+            <p href="#" class="header-top__map-link">
+              Смотреть на карте
+            </p>
+            <div class="header-top__map" style="overflow:hidden;"><a href="https://yandex.ru/maps/153/brest/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Брест</a><a href="https://yandex.ru/maps/153/brest/house/ZkoYcA5oSEMPQFtofXx4cn9gZw==/?ll=23.700550%2C52.091880&utm_medium=mapframe&utm_source=maps&z=16" style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Гоголя, 65 на карте Бреста — Яндекс.Карты</a><iframe src="https://yandex.ru/map-widget/v1/-/CCQlyIf3oC" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
           </div>
         </div>
-        <div class="header-top__column">
+        <div class="header-top__column header-top__column--tel">
           <a href="tel:+375333822499" class="header-top__phone">
             <div class="header-top__img">
               <img src="img/phone.png" alt="Иконка звонка">
             </div>
-            <div>
+            <div class="header-top__tel-column">
               <span>Звоните, мы сейчас работаем</span>
               +375 33 382 24 99
             </div>
           </a>
           <div class="header-top__column-row">
             <div class="header-top__img">
-              <img src="img/time.png" alt="Иконка времени приема">
+              <img class="js-btn" src="img/time.png" alt="Иконка времени приема" data-mobile="time">
             </div>
-            <time>Пн-Вс <b>9:00-21:00</b></time>
+            <time class="header-top__time js-mobile js-close" data-mobile="time">Пн-Вс <b>9:00-21:00</b></time>
           </div>
         </div>
         <div class="header-top__column">
-          <a href="#" class="header__top-link">
+          <a href="#" class="header__top-link" aria-label="Записаться онлайн">
             <div class="header-top__img">
               <img src="img/calendar.png" alt="Иконка записи">
             </div>
-            Записаться онлайн
+            <span>Записаться онлайн</span>
           </a>
         </div>
+        <button class="header-top__nav-btn hamburger js-btn" type="button" data-mobile="nav">
+          <span class="hamburger__bar hamburger__bar--bar1"></span>
+          <span class="hamburger__bar hamburger__bar--bar2"></span>
+          <span class="hamburger__bar hamburger__bar--bar3"></span>
+          <span class="hamburger__bar hamburger__bar--bar4"></span>
+        </button>
       </div>
     </div>
     <div class="container">
-      <nav class="header__nav nav">
+      <nav class="header__nav nav js-mobile js-close" data-mobile="nav">
         <div class="container">
           <ul class="nav__list">
             <li class="nav__item">
@@ -117,12 +127,13 @@
               <li class="main__item">работаем и с женщинами, и с мужчинами;</li>
               <li class="main__item">результат уже после первой процедуры.</li>
             </ul>
-            <a href="#" class="main__link">
-              Получить карту клиента бесплатно
+            <a href="#" class="main__link button">
+              Получить карту<br> клиента бесплатно
               <img src="img/branch.png" alt="">
             </a>
           </div>
           <div class="main__column main__column--card">
+            <img src="img/card.png" alt="">
             <details class="main__details" open>
               <summary class="main__summary">
                 i
@@ -132,14 +143,57 @@
              </details>
           </div>
         </div>
+        <a class="main__bottom-link" href="#">
+          <svg  width="135" height="135">
+            <use xlink:href="#icon-drawing"></use>
+          </svg>
+        </a>
       </div>
-      <a class="main__bottom-link" href="#">
-        <svg  width="135" height="135">
-          <use xlink:href="#icon-drawing"></use>
-        </svg>
-      </a>
     </section>
   </main>
+  <div class="popup hidden">
+    <form action="#" method="POST">
+      <h2 class="popup__caption"><b>Получите</b> программу обучения</h2>
+      <p class="popup__text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna 
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+        ullamco laboris nisi ut
+      </p>
+      <p class="popup__input js-select">
+        Повышенмие квалификации
+        <svg  width="25" height="17">
+          <use xlink:href="#icon-arrow"></use>
+        </svg>
+      </p>
+      <div class="popup__input-column js-select-close">
+        <input class="popup__input" type="text" name="name" placeholder="Ваше имя">
+        <input class="popup__input js-tel-input" type="tel" name="tel" placeholder="Ваш номер телефона">
+      </div>
+      <button class="popup__button button" type="submit">
+        Получить программу
+        <img src="img/leaf-2.png" alt="">
+      </button>
+      <img class="popup__img" src="img/overlay.png" alt="">
+      <button class="popup__close" type="button">
+        <svg  width="12" height="12">
+          <use xlink:href="#icon-close"></use>
+        </svg>
+      </button>
+    </form>
+    <div class="popup__success hidden">
+      <img src="img/ok.png" alt="">
+      <p class="popup__succes-text">
+        <b>Ваш заказ принят.</b>
+        Ожидайте звонка
+      </p>
+      <button class="popup__close" type="button">
+        <svg  width="12" height="12">
+          <use xlink:href="#icon-close"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
   <script src="js/script.min.js"></script>
 </body>
 </html>

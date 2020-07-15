@@ -1,29 +1,37 @@
 'use strict';
 
 (function () {
-  const footerTopBtn = document.querySelector('.footer-top__btn');
-  const formPopup = document.querySelector('.form-popup');
-  const formPopupExit = document.querySelector('.form-popup__btn-exit');
+  const popup = document.querySelector('.popup');
+  const headerLink = document.querySelector('.header__top-link');
+  const mainLink = document.querySelector('.main__link');
+  const popupClose = document.querySelectorAll('.popup__close');
 
-  const getOpen = function () {
-    formPopup.classList.remove('hidden');
+  const getOpen = function() {
+    popup.classList.remove('hidden');
   };
 
-  const getClose = function () {
-    formPopup.classList.add('hidden');
+  const getClose = function() {
+    popup.classList.add('hidden');
   };
 
-  footerTopBtn.addEventListener('click' , function() {
+  headerLink.addEventListener('click' , function(evt) {
+    evt.preventDefault();
     getOpen();
   })
 
-  formPopupExit.addEventListener('click' , function() {
-    getClose();
+  mainLink.addEventListener('click' , function() {
+    getOpen();
   })
 
-  formPopup.addEventListener('click' , function(event) {
+  popupClose.forEach(function(item) {
+    item.addEventListener('click' , function() {
+      getClose();
+    })
+  })
+
+  popup.addEventListener('click' , function(event) {
     if (event.target === this) {
-      getClose(); 
+      getClose();
     }
   })
 
@@ -32,5 +40,4 @@
       getClose(); 
     }
   });
-
 })();

@@ -1,0 +1,34 @@
+.button {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-family: $museo;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.1;
+  color: $white;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  border-radius: 50px;
+  background-image: linear-gradient(to bottom ,$primary-color-4 , $primary-color-5);
+  box-shadow:
+    inset 0px -5px 0px 0px $primary-color-6,
+    0px 5px 0px 0px $primary-color-7;
+
+  & img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50% );
+  }
+
+  &:focus,
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

@@ -16,15 +16,6 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-
-  background-image:
-    url('../img/heart.png'),
-    url('../img/heart-2.png'),
-    url('../img/background.png');
-  background-attachment: fixed, fixed, scroll;
-  background-position: 0 0 , right 0, center;
-  background-repeat: no-repeat;
-  background-size: auto, auto, 100vw 300%;
 }
 
 *,
@@ -53,5 +44,15 @@ img {
 
 .hidden {
   display: none;
+}
+
+@media(max-width:992px) {
+  .js-close {
+    transform-origin: 0 0;
+    transform: scaleY(0);
+    transition: all .2s ease-in;
+  
+    opacity: 0;
+  }  
 }
 
