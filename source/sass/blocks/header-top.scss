@@ -1,6 +1,5 @@
 .header-top__row {
-  padding-top: 31px;
-  padding-bottom: 7px;
+  padding: 31px 1.8vw 7px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -10,79 +9,150 @@
 .header-top__column {
   &--map {
     display: flex;
+    margin-right: 3.2vw;
   }
+
+  &--text {
+    margin-right: auto;
+    margin-left: 2.2vw;
+  }
+
+  &--tel {
+    margin-bottom: 7px;
+    margin-right: 3.2vw;
+  }
+}
+
+.header-top__column-row {
+  display: flex;
+  align-items: center;
 }
 
 .header-top__logo {
   @include hover();
-  margin-left: 15px;
 }
 
 .header-top__text {
   max-width: 170px;
   margin: 0;
+  margin-bottom: 7px;
 
   font-family: $museo;
   font-weight: 300;
-  line-height: 1.4;
+  line-height: 1.15;
   font-size: 14px;
   color: $black;
 }
 
+.header-top__map-column {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &:focus,
+  &:hover,
+  &:active {
+    .header-top__map {
+      display: block;
+    }
+  }
+}
+
+.header-top__tel-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header-top__map-img {
+  display: block;
+  margin-right: 0.3vw;
+}
+
 .header-top__adress {
   margin: 0;
+  margin-top: 15px;
+  margin-bottom: 14px;
 
   font-family: $museo;
   font-weight: 500;
   line-height: 1;
   font-size: 16px;
+  letter-spacing: 0.06rem;
   color: $black;
 
   & b {
     display: block;
+    margin-bottom: 7px;
   }
 }
 
 .header-top__map-link {
+  margin: 0;
   display: block;
 
   font-family: $museo;
   font-weight: 300;
   line-height: 1;
-  font-size: 12px;
+  font-size: 14px;
   color: $primary-color-1;
+  text-decoration: none;
   text-transform: uppercase;
-  text-decoration: dashed;
+
+  border-bottom: dashed;
+
+  &:focus,
+  &:hover,
+  &:active {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+}
+
+.header-top__map {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  top: 100%;
+  left: 50%;
+
+  transform: translateX(-50%);
 }
 
 .header-top__phone {
+  @include hover();
+  
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 
   font-family: $museo;
   font-size: 24px;
-  line-height: 1.5;
+  line-height: 1.35;
   color: $black;
   text-decoration: none;
+  letter-spacing: 0.035rem;
 
   & span {
     display: block;
     position: relative;
+    margin-left: 0.9vw;
 
     font-size: 12px;
 
     &::after {
       content: "";
       position: absolute;
-      left: -10px;
-      top: 50%;
+      left: -18px;
+      top: 39%;
       transform: translateY(-50%);
 
       display: block;
       width: 8px;
       height: 8px;
 
-      background-color: #27b24b;
+      background-color: $third-color-1;
       border-radius: 50%;
       box-shadow: $header-icon-shadow;
     }
@@ -90,6 +160,7 @@
 }
 
 .header-top__img {
+  margin-right: 0.6vw;
   width: 35px;
   height: 35px;
   display: flex;
@@ -103,6 +174,9 @@
 }
 
 .header__top-link {
+  @include hover();
+
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,11 +192,200 @@
   background-color: $white;
   border-radius: 25px;
 
-  box-shadow: 0px 3px 1px 0px $secondary-color;
+  box-shadow: 0px 3px 1px 0px $secondary-color-1;
 }
 
+.header-top__time {
+  font-family: $museo;
+  font-size: 17px;
+  line-height: 1;
+  font-weight: 400;
+}
 
-.header-top__column-row {
-  display: flex;
-  align-items: center;
+.header-top__nav-btn {
+  display: none;
+}
+
+@media(max-width:1440px) {
+  .header-top__column {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .header-top__map {
+    right: 0;
+    left: auto;
+
+    transform: translateX(0);
+  }
+}
+
+@media(max-width:992px) {
+  .header-top__row {
+    padding: 0 20px;
+  }
+
+  .header-top__map {
+    right: auto;
+    left: 0;
+    width: 100%;
+    min-width: 100vw;
+
+    & iframe {
+      width: 100%;
+    }
+  }
+
+  .header-top__logo {
+    & img {
+      height: 80px;
+    }
+  }
+
+  .header-top__text {
+    display: none;
+  }
+
+  .header-top__time {
+    padding: 20px;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 100%;
+    width: 100%;
+
+    transform-origin: 0 0;
+    transition: all .2s ease-in;
+
+    opacity: 1;
+    background-color: $white;
+  }
+
+  .header-top__map-column {
+    padding: 20px;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 100%;
+    width: 100%;
+
+    transform-origin: 0 0;
+    transition: all .2s ease-in;
+
+    opacity: 1;
+    background-color: $white;
+  }
+
+  .header-top__adress {
+    margin-top: 0;
+  }
+
+  .header-top__row {
+    justify-content: flex-start;
+  }
+
+  .header-top__column {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 25px;
+
+    &:first-child {
+      margin-right: auto;
+    }
+
+    &--tel {
+      display: flex;
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+
+    &--map {
+      margin-right: 21px;
+      margin-left: 0;
+    }
+  }
+
+  .header-top__tel-column {
+    display: none;
+  }
+
+  .header-top__phone {
+    margin-right: 25px;
+  }
+
+  .header__top-link {
+    margin-bottom: 0;
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+    box-shadow: none;
+
+    & span {
+      display: none;
+    }
+  }
+
+  .header-top__img {
+    margin-right: 0;
+  }
+
+  .header-top__map-img {
+    margin-right: 0;
+
+    width: 48px;
+    height: 48px;
+  }
+
+  .header-top__nav-btn {
+    display: block;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+}
+
+@media(max-width:650px) {
+  .header-top__row {
+    justify-content: flex-start;
+  }
+
+  .header-top__column {
+    margin-right: 0;
+    width: 20%;
+
+    &:first-child {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    &--text {
+      width: 0;
+    }
+
+    &--tel {
+      width: 40%;
+    }
+
+    &--map {
+      margin-right: 0;
+    }
+  }
+
+  .header-top__logo {
+    margin-bottom: 20px;
+  }
+
+  .header-top__phone {
+    margin-right: auto;
+  }
+
+  .header-top__column-row {
+    margin-right: auto;
+  }
+
+  .header-top__nav-btn {
+    margin-left: auto;
+  }
 }
