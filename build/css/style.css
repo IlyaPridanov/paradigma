@@ -1317,7 +1317,7 @@ img {
   border-radius: 45px;
   background-image: url("../img/leaf-1.png"), -webkit-gradient(linear, left bottom, right top, from(#fcfdfd), to(#fcf2ee));
   background-image: url("../img/leaf-1.png"), linear-gradient(to top right, #fcfdfd, #fcf2ee);
-  background-position: 200% 2657%, center;
+  background-position: 200% 2657%, center;
   background-repeat: no-repeat; }
   .popup__success img {
     display: block;
